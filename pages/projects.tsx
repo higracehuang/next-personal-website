@@ -18,10 +18,12 @@ type ProjectItemProps = {
 function ProjectItem(props: ProjectItemProps) {
   let {name, desc, emoji, url, urlDisplay} = props
   return <li>
-    <div className="text-3xl relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5">{emoji}</div>
-    <h3 className="mt-6 font-bold">{name}</h3>
-    <p className="text-zinc-600 mt-2">{desc}</p>
-    <p className="mt-6 text-zinc-400 text-sm">{urlDisplay}</p>
+    <div className="ring-1 ring-zinc-900/5 bg-zinc-50 px-6 py-6 rounded-xl">
+      <div className="text-3xl relative z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5">{emoji}</div>
+      <h3 className="mt-6 font-bold">{name}</h3>
+      <p className="text-zinc-600 mt-2">{desc}</p>
+      <p className="mt-6 text-zinc-400 text-sm">{urlDisplay}</p>
+    </div>
   </li>
 }
 
