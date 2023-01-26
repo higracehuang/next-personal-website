@@ -29,18 +29,18 @@ export default function Projects() {
   return <div className="mt-16 px-8">
     <header>
       <h1 className="font-bold text-4xl text-zinc-800">Creative Things I Do Now</h1>
-      <p className="text-base mt-6 text-zinc-600">(TODO add more description here)</p>
+      <p className="text-base mt-6 text-zinc-600">I work on a number of small projects concurrently.</p>
     </header>
     <div className="mt-16">
       <h2 className="text-2xl">Apps</h2>
-      <ul className="grid grid-cols-3 gap-x-12 grap-y-16 mt-8">
+      <ul className="grid grid-cols-3 gap-x-12 gap-y-16 mt-8">
         <ProjectItem name={"TallyCoin"} desc={"An app for "} emoji={"💰"} url={"/"} urlDisplay={"gum"} />
         <ProjectItem name={"RedacApp"} desc={"An app for"} emoji={"✍️"} url={"/"} urlDisplay={""} />
       </ul>
     </div>
     <div className="mt-16">
       <h2 className="text-2xl">Books</h2>
-      <ul className="grid grid-cols-3 gap-x-12 grap-y-16 mt-8">
+      <ul className="grid grid-cols-3 gap-x-12 gap-y-16 mt-8">
         <ProjectItem name={"Building macOS apps with SwiftUI: A Practical Learning Guide"} desc={"I took a learning by doing approach to teach people how to building and publishing macOS apps with SwiftUI."} emoji={"💰"} url={"https://www.amazon.com/gp/product/B0BP5P9H31"} urlDisplay={"amazon.com"} />
         <ProjectItem name={"Nail A Coding Interview: Six-Step Mental Framework"} desc={"A mental framework created for coding interviews, based on my hundreds of interviews at big tech and startups."} emoji={"✍️"} url={"https://gracehuang.gumroad.com/l/coding-interview"} urlDisplay={"gracehuang.gumroad.com"} />
         <ProjectItem name={"A Practical Guide to Writing a Software Technical Design Document"} desc={"This tiny book will guide you through the writing process of a Technical Design Doc. It also comes with a real-life example of a Technical Design Document."} emoji={"💰"} url={"https://gracehuang.gumroad.com/l/mqmUt"} urlDisplay={"gracehuang.gumroad.com"} />
@@ -49,7 +49,7 @@ export default function Projects() {
     </div>
     <div className="mt-16">
       <h2 className="text-2xl">Writing</h2>
-      <ul className="grid grid-cols-3 gap-x-12 grap-y-16 mt-8">
+      <ul className="grid grid-cols-3 gap-x-12 gap-y-16 mt-8">
         <ProjectItem name={"Building macOS apps with SwiftUI: A Practical Learning Guide"} desc={"A Practical Learning Guide for building macOS"} emoji={"💰"} url={"https://www.amazon.com/gp/product/B0BP5P9H31"} urlDisplay={"amazon.com"} />
         <ProjectItem name={"Nail A Coding Interview: Six-Step Mental Framework"} desc={"A mental framework created for coding interviews, based on my hundreds of interviews at big tech and startups"} emoji={"✍️"} url={"https://gracehuang.gumroad.com/l/coding-interview"} urlDisplay={"gracehuang.gumroad.com"} />
       </ul>
