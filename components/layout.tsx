@@ -42,7 +42,7 @@ function FooterLink(props: FooterLinkProps) {
 }
 
 function Footer() {
-  return <footer className="pt-10 px-8 pb-16 border-t">
+  return <footer className="pt-6 px-8 pb-16 border-t mt-10">
     <div className="flex justify-between gap-6">
       <div className="flex gap-6 text-sm font-medium text-zinc-600">
         <FooterLink text={"About Me"} url={"/"} />
