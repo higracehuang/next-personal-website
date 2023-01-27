@@ -1,3 +1,12 @@
+import Image, { StaticImageData } from "next/image"
+
+import imageBookCodingInterview  from "../public/images/coding-interview.jpeg"
+import imageBookCodeReview from "../public/images/code-review.jpeg"
+import imageBookTDD from "../public/images/tdd.webp"
+import imageAppRedacApp from "../public/images/redacapp.png"
+import imageAppTallyCoin from "../public/images/tallycoin.png"
+import imageBookMacOSApp from "../public/images/macos-app.png"
+
 export async function getStaticProps() {
   return {
     props: {
@@ -7,23 +16,25 @@ export async function getStaticProps() {
 }
 
 type ProjectItemProps = {
-  emoji: string
   name: string
-  desc: string
   url: string
   urlDisplay: string
+  imageSrc: StaticImageData
 }
 
 
 function ProjectItem(props: ProjectItemProps) {
-  let {name, desc, emoji, url, urlDisplay} = props
+  let { name, url, urlDisplay, imageSrc: image } = props
   return <li>
     <a href={url}>
-      <div className="ring-1 ring-zinc-900/5 bg-zinc-50 px-6 py-6 rounded-xl">
-        <div className="text-3xl relative z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5">{emoji}</div>
-        <h3 className="mt-6 font-bold">{name}</h3>
-        <p className="text-zinc-600 mt-2">{desc}</p>
-        <p className="mt-6 text-zinc-400 text-sm">🔗 {urlDisplay}</p>
+      <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <Image className="w-full" src={image} alt={name} />
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">{name}</div>
+        </div>
+        <div className="px-6 pb-4">
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">🔗 {urlDisplay}</span>
+        </div>
       </div>
     </a>
   </li>
@@ -37,18 +48,18 @@ export default function Projects() {
     </header>
     <div className="mt-16">
       <h2 className="text-2xl">Apps</h2>
-      <ul className="grid grid-cols-3 gap-x-12 gap-y-16 mt-8">
-        <ProjectItem name={"TallyCoin"} desc={"An app for "} emoji={"💰"} url={"/"} urlDisplay={"App Store"} />
-        <ProjectItem name={"RedacApp"} desc={"An app for"} emoji={"✍️"} url={"/"} urlDisplay={"App Store"} />
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 mt-8">
+        <ProjectItem name={"TallyCoin: Tracking Chores And Rewards"} url={"https://apps.apple.com/us/app/tallycoin/id1633932632"} urlDisplay={"App Store"} imageSrc={imageAppTallyCoin} />
+        <ProjectItem name={"RedacApp: Redact Text In Images"} url={"https://gracehuang.gumroad.com/l/redac"} urlDisplay={"gumroad.com"} imageSrc={imageAppRedacApp} />
       </ul>
     </div>
     <div className="mt-16">
       <h2 className="text-2xl">Books</h2>
-      <ul className="grid grid-cols-3 gap-x-12 gap-y-16 mt-8">
-        <ProjectItem name={"Building macOS apps with SwiftUI: A Practical Learning Guide"} desc={"I took a learning by doing approach to teach people how to building and publishing macOS apps with SwiftUI."} emoji={"💰"} url={"https://www.amazon.com/gp/product/B0BP5P9H31"} urlDisplay={"amazon.com"} />
-        <ProjectItem name={"Nail A Coding Interview: Six-Step Mental Framework"} desc={"A mental framework created for coding interviews, based on my hundreds of interviews at big tech and startups."} emoji={"✍️"} url={"https://gracehuang.gumroad.com/l/coding-interview"} urlDisplay={"gracehuang.gumroad.com"} />
-        <ProjectItem name={"A Practical Guide to Writing a Software Technical Design Document"} desc={"This tiny book will guide you through the writing process of a Technical Design Doc. It also comes with a real-life example of a Technical Design Document."} emoji={"💰"} url={"https://gracehuang.gumroad.com/l/mqmUt"} urlDisplay={"gracehuang.gumroad.com"} />
-        <ProjectItem name={"Code Reviews in Tech: The Missing Guide"} desc={"This tiny book outlines intentions and etiquettes that have been tested in my whole engineering career, along with examples. "} emoji={"✍️"} url={"https://gracehuang.gumroad.com/l/codereviews"} urlDisplay={"gracehuang.gumroad.com"} />
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 mt-8">
+        <ProjectItem name={"Building macOS apps with SwiftUI: A Practical Learning Guide"} url={"https://www.amazon.com/gp/product/B0BP5P9H31"} urlDisplay={"amazon.com"} imageSrc={imageBookMacOSApp} />
+        <ProjectItem name={"Nail A Coding Interview: Six-Step Mental Framework"} url={"https://gracehuang.gumroad.com/l/coding-interview"} urlDisplay={"gracehuang.gumroad.com"} imageSrc={imageBookCodingInterview} />
+        <ProjectItem name={"A Practical Guide to Writing a Software Tech Design Doc"} url={"https://gracehuang.gumroad.com/l/mqmUt"} urlDisplay={"gracehuang.gumroad.com"} imageSrc={imageBookTDD} />
+        <ProjectItem name={"Code Reviews in Tech: The Missing Guide"} url={"https://gracehuang.gumroad.com/l/codereviews"} urlDisplay={"gracehuang.gumroad.com"} imageSrc={imageBookCodeReview} />
       </ul>
     </div>
   </div>
