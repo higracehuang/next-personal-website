@@ -10,7 +10,15 @@ import imageBookMacOSApp from "../public/images/macos-app.png"
 export async function getStaticProps() {
   return {
     props: {
-      pageId: "projects"
+      pageId: "projects",
+      metadata: {
+        title: "Projects | Grace Huang",
+        description: "Discover the past and ongoing projects of Grace Huang ",
+        openGraph: {
+          image: "https://example.com/image.jpg",
+          url: "https://example.com"
+        }
+      }
     }
   }
 }
